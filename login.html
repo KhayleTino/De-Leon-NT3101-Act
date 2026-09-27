@@ -238,10 +238,10 @@
             <p>Sign in to your account</p>
         </header>
 
-        <form class="login-form" action="landing-jquery.html" method="get">
+        <form class="login-form" action="landing.html" method="get">
             <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Your username" autocomplete="username" required />
             </div>
 
             <div class="form-group">
@@ -296,13 +296,13 @@
                 errorElement: "span",
                 errorClass: "field-error",
                 rules: {
-                    email: { required: true, email: true },
+                    username: { required: true, minlength: 2 },
                     password: { required: true }
                 },
                 messages: {
-                    email: {
-                        required: "Enter your email address.",
-                        email: "Enter a valid email address."
+                    username: {
+                        required: "Enter your username.",
+                        minlength: "Username must be at least 2 characters."
                     },
                     password: { required: "Enter your password." }
                 },
@@ -320,8 +320,7 @@
                     $(element).removeClass("is-invalid");
                 },
                 submitHandler: function (form) {
-                    const email = $(form).find("#email").val().trim();
-                    const username = email.split("@")[0];
+                    const username = $(form).find("#username").val().trim();
                     const status = $(form).find(".form-status");
 
                     try {

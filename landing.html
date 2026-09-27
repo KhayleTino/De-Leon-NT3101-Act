@@ -134,9 +134,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark border-bottom border-light border-opacity-10">
         <div class="container py-2">
-            <a class="brand-mark" href="landing-jquery.html">LEON</a>
-            <a class="btn btn-outline-light btn-sm px-3" href="login
-            .html" id="sign-out">Sign out</a>
+            <a class="brand-mark" href="landing.html">LEON</a>
+            <a class="btn btn-outline-light btn-sm px-3" href="login.html" id="sign-out">Sign out</a>
         </div>
     </nav>
 
@@ -187,12 +186,12 @@
 
             try {
                 if (sessionStorage.getItem("leonAuthenticated") !== "true") {
-                    window.location.replace("login-jquery.html");
+                    window.location.replace("login.html");
                     return;
                 }
                 username = sessionStorage.getItem("leonUsername") || "there";
             } catch (error) {
-                window.location.replace("login-jquery.html");
+                window.location.replace("login.html");
                 return;
             }
 
