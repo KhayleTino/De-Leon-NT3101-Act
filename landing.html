@@ -187,12 +187,12 @@
 
             try {
                 if (sessionStorage.getItem("leonAuthenticated") !== "true") {
-                    window.location.replace("login-jquery.html");
+                    window.location.replace("login.html");
                     return;
                 }
                 username = sessionStorage.getItem("leonUsername") || "there";
             } catch (error) {
-                window.location.replace("login-jquery.html");
+                window.location.replace("login.html");
                 return;
             }
 
